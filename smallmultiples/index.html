@@ -116,9 +116,9 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/qgis_hw8data.geojson'
+	var polygonJSONFile = 'data/health_data.geojson'
 	// change the projection if needed *d3.geoAlbers()*
-	var projection = d3.geoAlbers();
+	var projection = d3.geoTransverseMercator();
 	var widthheightRatio = 0.4;
 	// Relative placement of legend that ranges between 0 and 1.
 	// 0 is the start, whereas 1 i the end of each panel.
@@ -127,7 +127,7 @@
 	var legendX = 0.84, legendY = 0.5
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'tractce', nameAttribute = 'Census Tract';
+	var idAttribute = 'NAME', nameAttribute = 'State County';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
 	var colors =  colorbrewer.YlOrBr;
@@ -139,22 +139,22 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'prpnoneng', att1alias = '% Population Non-English Speakers', att1format = '.2f',
-	att2 = 'prp185x', att2alias =  '% Population under the 185% Federal Poverty Level', att2format = '.2f',
-	att3 = 'prppoc', att3alias = '% Population identifying as a Person of Color', att3format = '.2f',
-	att4 = 'HW8_cafo_reduced_pig_au_aland', att4alias = 'Swine Animal Unit Density per Square Mile of Land', att4format = '.2f';
+	var att1 = 'DOSE_ONE_P', att1alias = '% Population who received the first COVID-19 vaccination', att1format = '.0f',
+	att2 = 'DOSE_COM_1', att2alias =  '% Population who completed COVID-19 vaccination', att2format = '.0f',
+	att3 = 'asthma_CRUDE_RATE', att3alias = 'Rate of Asthma hospitilizations', att3format = '.0f',
+	att4 = 'asthma_AADJ_RATE', att4alias = 'Age Ajusted rate of Asthma hospitilizations', att4format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
 	// simply enter 1 for each value in multiplyBy.
-  //var attributesToBeNormalized = [att1, att4];
-	//var multiplyBy = [10000, 100];
-	//var divideBy = ['Population', 'Population'];
+  var attributesToBeNormalized = [att1, att2];
+	var multiplyBy = [10000, 10000];
+	var divideBy = ['POP', 'POP'];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	uncomment below:
-	var attributesToBeNormalized = [];
-	var multiplyBy = [];
-	var divideBy = [];
+	//var attributesToBeNormalized = [];
+	//var multiplyBy = [];
+	//var divideBy = [];
 
 	//DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING
 	////////////////////////////////////////////////////////////////////////////////////////////////
