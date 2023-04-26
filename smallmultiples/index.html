@@ -116,7 +116,7 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/HW8_cafoej_data.geojson'
+	var polygonJSONFile = 'data/qgis_hw8data.geojson'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoAlbers();
 	var widthheightRatio = 0.4;
@@ -127,7 +127,7 @@
 	var legendX = 0.84, legendY = 0.5
 
 	// id attribute and the name attribute to be used in the tooltip
-	var idAttribute = 'ej_cafo_project_tractce', nameAttribute = 'tractce';
+	var idAttribute = 'tractce', nameAttribute = 'Census Tract';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
 	var colors =  colorbrewer.YlOrBr;
@@ -139,10 +139,10 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'ej_cafo_project_prpnoneng', att1alias = '% Population Non-English Speakers', att1format = '.2f',
-	att2 = 'ej_cafo_project_prp185x', att2alias =  '% Population under the 185% Federal Poverty Level', att2format = '.2f',
-	att3 = 'ej_cafo_project_prppoc', att3alias = '% Population identifying as a Person of Color', att3format = '.2f',
-	att4 = 'pig_au_aland', att4alias = 'Swine Animal Unit Density per Square Mile of Land', att4format = '.2f';
+	var att1 = 'prpnoneng', att1alias = '% Population Non-English Speakers', att1format = '.2f',
+	att2 = 'prp185x', att2alias =  '% Population under the 185% Federal Poverty Level', att2format = '.2f',
+	att3 = 'prppoc', att3alias = '% Population identifying as a Person of Color', att3format = '.2f',
+	att4 = 'HW8_cafo_reduced_pig_au_aland', att4alias = 'Swine Animal Unit Density per Square Mile of Land', att4format = '.2f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
