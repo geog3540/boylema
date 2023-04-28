@@ -82,12 +82,12 @@
 			<br />
 			<div class="row">
 				<div class="col-sm-6">
-					<span><p><h3 class='mapTitle'>Percent Poverty</h3>Percent of the population under the 185% federal poverty level.</p></span>
+					<span><p><h3 class='mapTitle'>Poverty</h3>Proportion of the population under the 185% federal poverty level.</p></span>
 					<div id="divMap1"></div>
 					<div id="divHist1"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Percent Non-English</h3><p>Percent of the population whose primary language is not English.</p>
+					<h3 class='mapTitle'>Non-English Speakers</h3><p>Percent of the population whose primary language is not English.</p>
 					<div id="divMap2"></div>
 					<div id="divHist2"></div>
 				</div>
@@ -95,7 +95,7 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>Percent Minority</h3><p>Percent of the population identifying as a person of color.</p>
+					<h3 class='mapTitle'>Minority Members</h3><p>Proportion of the population identifying as a person of color.</p>
 					<div id="divMap3"></div>
 					<div id="divHist3"></div>
 				</div>
@@ -139,17 +139,17 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'prp185x', att1alias = '% population under the 185% federal poverty level', att1format = '.2f',
+	var att1 = 'prp185x', att1alias = 'Proportion population under the 185% federal poverty level', att1format = '.2f',
 	att2 = 'prpnoneng', att2alias =  'Percent population of non-English speakers', att2format = '.2f',
-	att3 = 'prppoc', att3alias = 'Percent population of people identifying as minority', att3format = '.2f',
+	att3 = 'prppoc', att3alias = 'Proportion population of people identifying as minority', att3format = '.2f',
 	att4 = 'HW8_cafo_reduced_pig_au_aland', att4alias = 'Swine density (per square mile)', att4format = '.2f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
 	// simply enter 1 for each value in multiplyBy.
-  //var attributesToBeNormalized = [att1, att4];
-	//var multiplyBy = [10000, 100];
-	//var divideBy = ['Population', 'Population'];
+  //var attributesToBeNormalized = [att1, att3];
+	//var multiplyBy = [100, 100];
+	//var divideBy = [1, 1];
 	// if your variables are not raw counts and they are already normalized, comment out above, and
 	//uncomment below:
 	var attributesToBeNormalized = [];
