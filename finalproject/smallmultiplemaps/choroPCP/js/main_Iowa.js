@@ -1,5 +1,5 @@
 
-var polygonJSONFile = "data/newhuc8eccafo.geojson";
+var polygonJSONFile = "data/huc8ecchangesdata.geojson";
 
 //change the center of your map in setView
 var centerLatitude = 42.17, centerLongitude = -93.45;
@@ -8,14 +8,14 @@ var centerLatitude = 42.17, centerLongitude = -93.45;
 var zoomLevel = 7;
 
 var numberOfClasses = 7;
-var colors = colorbrewer.Reds;
+var colors = colorbrewer.YlOrBr;
 
 //TODO: change the name and id field of your data. These will be used to link the pcp with the map, and also display labels
 var key = "HUC_8";
 var dropdowntext = "Select Attribute:";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["huc8eccafodata_ec_aug", "huc8eccafodata_weanau_sqmi", "huc8eccafodata_nursau_sqmi", "huc8eccafodata_growau_sqmi"];
+var attNames = ["newhuc8changeec_ec_aug_sep", "newhuc8changeec_weanau_sqmi", "newhuc8changeec_nursau_sqmi", "newhuc8changeec_growau_sqmi","newhuc8changeec_au_sqmi"];
 var attLegendFormat = ".0f"
 
 // This string is appended in front of the attribute name to make age groups descriptive

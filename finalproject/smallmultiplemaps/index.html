@@ -53,7 +53,7 @@
 	<div class="container">
 		<div class="content">
 			<div class="row">
-					<h1>Escherichia coli in Iowa</h1>
+					<h1>Seasonal Changes of Escherichia coli Concentrations in Iowa Watersheds</h1>
 			</div>
 			<hr />
 			<div class="row">
@@ -83,12 +83,12 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<span><p><h3 class='mapTitle'>May</h3>Average E. coli concentration (MPN/100ml) of watershed units in May.</p></span>
+					<span><p><h3 class='mapTitle'>April-May</h3>Average change in E. coli concentration (MPN/100ml) of watershed units from April to May.</p></span>
 					<div id="divMap1"></div>
 					<div id="divHist1"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>June</h3><p>Average E. coli concentration (MPN/100ml) of watershed units in June.</p>
+					<h3 class='mapTitle'>May-June</h3><p>Average change in E. coli concentration (MPN/100ml) of watershed units from May to June.</p>
 					<div id="divMap2"></div>
 					<div id="divHist2"></div>
 				</div>
@@ -96,12 +96,12 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>July</h3><p>Average E. coli concentration (MPN/100ml) of watershed units in July.</p>
+					<h3 class='mapTitle'>June-July</h3><p>Average change in E. coli concentration (MPN/100ml) of watershed units from June to July.</p>
 					<div id="divMap3"></div>
 					<div id="divHist3"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>August</h3><p>Average E. coli concentration (MPN/100ml) of watershed units in August.</p>
+					<h3 class='mapTitle'>July-August</h3><p>Average change in E. coli concentration (MPN/100ml) of watershed units from July to August.</p>
 					<div id="divMap4"></div>
 					<div id="divHist4"></div>
 				</div>
@@ -110,12 +110,12 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-					<span><p><h3 class='mapTitle'>September</h3>Average E. coli concentration (MPN/100ml) of watershed units in September.</p></span>
+					<span><p><h3 class='mapTitle'>August-September</h3>Average change in E. coli concentration (MPN/100ml) of watershed units from August to September.</p></span>
 					<div id="divMap5"></div>
 					<div id="divHist5"></div>
 				</div>
 				<div class="col-sm-6">
-					<h3 class='mapTitle'>October</h3><p>Average E. coli concentration (MPN/100ml) of watershed units in October.</p>
+					<h3 class='mapTitle'>September-October</h3><p>Average change in E. coli concentration (MPN/100ml) of watershed units from September to October.</p>
 					<div id="divMap6"></div>
 					<div id="divHist6"></div>
 				</div>
@@ -132,7 +132,7 @@
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////
 	// TODO: Change the variables below to customize the small multiples interface for your data
-	var polygonJSONFile = 'data/newhuc8eccafo.geojson'
+	var polygonJSONFile = 'data/huc8ecchangesdata.geojson'
 	// change the projection if needed *d3.geoAlbers()*
 	var projection = d3.geoAlbers();
 	var widthheightRatio = 0.6;
@@ -146,7 +146,7 @@
 	var idAttribute = 'HUC_8', nameAttribute = 'Watershed';
 
 	// Find the abbreviations of color names from https://colorbrewer2.org/
-	var colors =  colorbrewer.YlOrBr;
+	var colors =  colorbrewer.BrBG;
 
 	// Chart/map attributes (variables) and formats based on the divs defined above
 	// For attribute 1 (the same for all others), see the description of the parameters below.
@@ -155,12 +155,12 @@
 	// att1format: enter the d3.format string to display the variables in the format you like
 	// Check this link on how to specify the desired format:
 	// https://observablehq.com/@d3/d3-format
-	var att1 = 'huc8eccafodata_ec_may', att1alias = 'Average E. coli concentration in May', att1format = '.0f',
-	att2 = 'huc8eccafodata_ec_jun', att2alias =  'Average E. coli concentration in June', att2format = '.0f',
-	att3 = 'huc8eccafodata_ec_jul', att3alias = 'Average E. coli concentration in July', att3format = '.0f',
-	att4 = 'huc8eccafodata_ec_aug', att4alias = 'Average E. coli concentration in Aug', att4format = '.0f',
-	att5 = 'huc8eccafodata_ec_sept', att5alias = 'Average E. coli concentration in Sept', att5format = '.0f',
-	att6 = 'huc8eccafodata_ec_oct', att6alias = 'Average E. coli concentration in Oct', att6format = '.0f';
+	var att1 = 'newhuc8changeec_ec_apr_may', att1alias = 'Average change in E. coli concentration from Apr to May', att1format = '.0f',
+	att2 = 'newhuc8changeec_ec_may_jun', att2alias =  'Average change in E. coli concentration from May to June', att2format = '.0f',
+	att3 = 'newhuc8changeec_ec_jun_jul', att3alias = 'Average change in E. coli concentration from June to July', att3format = '.0f',
+	att4 = 'newhuc8changeec_ec_jul_aug', att4alias = 'Average change in E. coli concentration from July to Aug', att4format = '.0f',
+	att5 = 'newhuc8changeec_ec_aug_sep', att5alias = 'Average change in E. coli concentration from Aug to Sept', att5format = '.0f',
+	att6 = 'newhuc8changeec_ec_sep_oct', att6alias = 'Average change in E. coli concentration from Sept to Oct', att6format = '.0f';
 
   // enter below all variables that should be normalized. If you would like to multiple the variables
 	// with a constant value enter them in multiplyBy array. If there is no need for multiplication,
