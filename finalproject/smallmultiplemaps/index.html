@@ -284,16 +284,16 @@
 				d3.select(d.btn).on('click', function() {
 					d3.selectAll('.btn').classed('active', false);
 					d3.select(this).classed('active', true);
-					var buttonid = d3.select(this).node().id;
-					if(buttonid == "ckmButton"){
-						$(".container").fadeOut(200);
-						functionAlert("Maps cannot be compared visually when natural breaks classification is selected. " +
-					  "Because natural breaks focuses on the recise distribution of each attribute along the number line.");
-					}else if(buttonid == "eqIntButton"){
-						$(".container").fadeOut(200);
-						functionAlert("When equal interval classification is selected, all maps should be"
-						+ " in the same scale (e.g., percentage) and have the same range (min-max values) to be comparable.");
-					}
+					// var buttonid = d3.select(this).node().id;
+					// if(buttonid == "ckmButton"){
+					// 	$(".container").fadeOut(200);
+					// 	functionAlert("Maps cannot be compared visually when natural breaks classification is selected. " +
+					//   "Because natural breaks focuses on the recise distribution of each attribute along the number line.");
+					// }else if(buttonid == "eqIntButton"){
+					// 	$(".container").fadeOut(200);
+					// 	functionAlert("When equal interval classification is selected, all maps should be"
+					// 	+ " in the same scale (e.g., percentage) and have the same range (min-max values) to be comparable.");
+					// }
 
 					current_scale = d.scale;
 					rescale(polygons);
@@ -303,6 +303,7 @@
 				rescale(polygons);
 			});
 
+			var allVariables = [];
 			// For each input attribute make a map and a histogram
 			charts.forEach(function(d) {
 				// Set scales + variable for each map
@@ -310,7 +311,9 @@
 
 				var hist_var = polygons.features.filter(function(e) { return +e.properties[dependent]; })
 				.map(function(e) { return +e.properties[dependent]; });
-				setScales(hist_var);
+				setHistogramScales(hist_var);
+
+				allVariables = allVariables.concat(hist_var);
 
 				// set histogram
 				var currentBins = bins.domain(linear_scale.domain())(hist_var);
@@ -402,6 +405,9 @@
 						// .attr("transform", "translate(" + margin.left + "," + margin.top + ") rotate("+ 0 +")");
 
 					}); // end for each
+					setScales(allVariables);
+
+
 				});
 
 				function recalculateAttribute(attribute, multiplyby, divideby) {
@@ -509,8 +515,12 @@
 					.domain([min, max])
 					.range(color_scale);
 
-					var naturalbreaks = ss.ckmeans(data, color_scale.length).map(v => v.pop())
+					var naturalbreaks = ss.ckmeans(data, color_scale.length).map(v => v.pop());
 					jenks_scale.domain(naturalbreaks).range(color_scale);
+				}
+
+				function setHistogramScales(data){
+					var max = d3.max(data), min = d3.min(data);
 					linear_scale.domain([min, max]).range(color_scale);
 					hist_scale.domain([min, max]);			// set the histogram up dynamically
 				}
@@ -523,13 +533,19 @@
 				}
 
 				function rescale(data) {
+
+					allVariables = [];
 					// function to restyle all of the maps
 					charts.forEach(function(d) {
 						var hist_var = data.features.filter(function(e) { return +e.properties[d.var]; })
 						.map(function(e) { return +e.properties[d.var]; });
 
-						// Set scale for each chart (diff vars)
-						setScales(hist_var);
+						// Set scale for each chart (diff vars)\
+						//TODO: change here
+						//setScales(hist_var);
+						setHistogramScales(hist_var);
+
+						allVariables = allVariables.concat(hist_var);
 						// map polygons
 						var map = d3.select(d.map).selectAll('.polygons')
 						.transition(250)
@@ -551,6 +567,10 @@
 
 						d3.select(d.map).select('.legendQuant').call(holdLegend.scale(current_scale));
 					});
+
+					// add all variables together to make the legend.
+					setScales(allVariables);
+
 				} // end rescale, apply to buttons
 
 				function functionAlert(msg, myYes) {
