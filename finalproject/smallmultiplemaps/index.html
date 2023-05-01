@@ -294,7 +294,6 @@
 					// 	functionAlert("When equal interval classification is selected, all maps should be"
 					// 	+ " in the same scale (e.g., percentage) and have the same range (min-max values) to be comparable.");
 					// }
-
 					current_scale = d.scale;
 					rescale(polygons);
 				});
@@ -302,8 +301,8 @@
 			d3.select('#classDropdown').on('input', function() {
 				rescale(polygons);
 			});
+			rescale(polygons);
 
-			var allVariables = [];
 			// For each input attribute make a map and a histogram
 			charts.forEach(function(d) {
 				// Set scales + variable for each map
@@ -312,8 +311,6 @@
 				var hist_var = polygons.features.filter(function(e) { return +e.properties[dependent]; })
 				.map(function(e) { return +e.properties[dependent]; });
 				setHistogramScales(hist_var);
-
-				allVariables = allVariables.concat(hist_var);
 
 				// set histogram
 				var currentBins = bins.domain(linear_scale.domain())(hist_var);
@@ -405,8 +402,7 @@
 						// .attr("transform", "translate(" + margin.left + "," + margin.top + ") rotate("+ 0 +")");
 
 					}); // end for each
-					setScales(allVariables);
-
+					rescale(polygons);
 
 				});
 
