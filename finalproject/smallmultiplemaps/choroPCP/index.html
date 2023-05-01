@@ -73,28 +73,36 @@
       <div class="panel-body">
         <div class="row panel-header">
           <div class="col-lg-12">
-            <h1 class="page-header">PCP: E. coli & Swine Density</h1>
+            <h1 class="page-header">E.coli & Swine Density</h1>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-9">
             <!-- Change the map description below-->
-            <p>This map displays the cocentration of E.coli in the chosen month and the swine density for several population types of swine in livestock production.
-              A parallel coordinates plot (PCP) allows visualization of the relationship between serveral different variables, providing an overview of the entire mulivariate dataset.
-
-              The parallel coordinates and map combination neatly follows Scheiderman's mantra.</p>
+            <p>This map displays the change in the cocentration of E.coli between the chosen month from the previous maps and the swine density for several population categories of swine in livestock production.
+              A parallel coordinates plot (PCP) allows visualization of the relationship between the density of the different swine categories and the change in E.coli concentration.
+              The swine categories included in this data are explained below:</p>
               <ul>
-                <li>P.C. enables you (the user) an <b>overview</b> of <i>all</i> the data. cafo/ec fact 1</li>
-                  <li>cafo/ec fact 2.</li>
-                    <li>cafo/ec fact 3.</li>
+                <li> <b>Wean:</b> Female pigs are moved to individual pens and the piglets are typically weaned 2-3 weeks afterwards.</li>
+                  <li><b>Nurse:</b>Following the weaning process, piglets are moved to a sperate confinement barn for nursing.
+                    These barns are typically lined with slotted plastic to allow for the escape of manure.</li>
+                    <li><b>Grow:</b>The last stage before the pigs reach market weight is the grow category. Pigs are fed and grown until the reach market weight.
+                      The use of antiobtics must end within a certain period prior to slaughter.</li>
                   </ul>
 
                   <!-- Change the map interpretation below-->
-                  <p>Overall, the world's population distribution has very clear trends: developed nations have a much more balanced distribution,
-                    if not skewed toward older groups. Undeveloped nations are bottom heavy, with a lot of children.
-                    The data was taken from the World Bank's Health Nutrition and Population Statistics estimates 2015 survey data.
-                    Some countries are incomplete, and will be greyed out. All of the data has been normalized,
-                    so the values you see at the bottom are the portions of the country whose population is made up of that age group.</p>
+
+                  <p>Antibiotics are used  in CAFOs to not only to treat infections, but to promote growth and prevent any potentially future infections (Chee-Sandford et al, 2009, Woolhouse et al, 2015).
+                    The overuse of antibiotics creates a highly selective environment for microbes, resulting in increased concentrations of antibiotic reisitant bacteria (ARB) and genes (ARG) in manure and wastewater from these locations (Pruden et al, 2006).
+                  Its been shown that ARBs and ARGs are partially environemental contaminants originating from multiple sources including hospitals, waste water treatment plants, manure application from CAFOs, aquaculture, and industry (Kraemer et al, 2019).
+                To make things more complicated, in addition to antibiotics affecting ARB and ARG occcurences at the initial sites (hospitals, CAFOs, etc.), increased antibiotic concentrations in the environment are creating more selective natural environments not only bacterial population in CAFOs,
+                but also environmental microbial populations that are naturally found in these environments. Even low concentraton of antibiotics in the environment have been shown to increase horizontal gene transfer, transcription levels, and mutation rates, resulting in potentially more resistance and virulent bacterial strains(Foster, 2007, Maiques et al, 2006, Remy et al, 2018).</p>
+
+
+              <p>
+                Although the map below only shows concentrations of E. coli (due to data avaiablity and missing observations), it provides a general picture of how the temporal changes in E. coli concentrations in Iowa Watersheds may be related to
+                the swine density in each watershed. Additionally, seperating the swine population into categories based on the production step, can provide insight into specific processes that may be more directly correlated with an increase in E.coli levels. </p>
+
                   </div>
                   <div class="col-lg-2">
                     <div class="row">
@@ -132,6 +140,22 @@
                   <div class="row">
                     <div class="col-xs-12">
                       <p><b>Changes:</b> Mouseover now highlights the parallel coordinate plot! Some minor formatting tweaks otherwise.</p>
+
+                      <h5 class="card-title">
+                        <b>References </b>
+                      </h5>
+
+                      <ul>
+                        <li>Chee-Sanford, J.C.; Mackie, R.I.; Koike, S.; Krapac, I.G.; Lin, Y.-F.; Yannarell, A.C.; Maxwell, S.; Aminov, R.I. Fate and Transport of Antibiotic Residues and Antibiotic Resistance Genes following Land Application of Manure Waste. J. Environ. Q. 2009, 38, 1086–1108.</li>
+                          <li>Woolhouse, M.; Ward, M.; Van Bunnik, B.; Farrar, J. Antimicrobial resistance in humans, livestock and the wider environment. Philos. Trans. R. Soc. B Boil. Sci. 2015, 370, 20140083.</li>
+                            <li>Pruden, A.; Pei, R.; Storteboom, H.; Carlson, K.H. Antibiotic resistance genes as emerging contaminants: Studies in northern Colorado. Environ. Sci. Technol. 2006, 40, 7445–7450.</li>
+                            <li>Kraemer, S. A.; Ramachandran A.; Perron G.G. Antibiotic Pollution in the Environment: From Microbial Ecology to Public Policy. Microorganisms. 2019, 7, 180</li>
+                            <li>Foster, P. Stress-induced mutagenesis in bacteria. Crit. Rev. Biochem. Mol. Biol. 2007, 42, 373–397.</li>
+                            <li>Maiques, E.; Úbeda, C.; Campoy, S.; Salvador, N.; Lasa, Í.; Novick, R.P.; Barbé, J.; Penadés, J.R. β-lactam antibiotics induce the SOS response and horizontal transfer of virulence factors in Staphylococcus aureus. J. Bacteriol. 2006, 188, 2726–2729.</li>
+                            <li>Rémy, B.; Mion, S.; Plener, L.; Elias, M.; Chabrière, E.; Daudé, D. Interference in bacterial quorum sensing: A biopharmaceutical perspective. Front. Pharmacol. 2018, 9, 203</li>
+
+                          </ul>
+
                     </div>
                   </div>
 

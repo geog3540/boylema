@@ -8,14 +8,14 @@ var centerLatitude = 42.17, centerLongitude = -93.45;
 var zoomLevel = 7;
 
 var numberOfClasses = 7;
-var colors = colorbrewer.YlOrBr;
+var colors = colorbrewer.PuBuGn;
 
 //TODO: change the name and id field of your data. These will be used to link the pcp with the map, and also display labels
 var key = "HUC_8";
 var dropdowntext = "Select Attribute:";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["newhuc8changeec_ec_aug_sep", "newhuc8changeec_weanau_sqmi", "newhuc8changeec_nursau_sqmi", "newhuc8changeec_growau_sqmi","newhuc8changeec_au_sqmi"];
+var attNames = ["newhuc8changeec_ec_apr_may", "newhuc8changeec_weanau_sqmi", "newhuc8changeec_nursau_sqmi", "newhuc8changeec_growau_sqmi","newhuc8changeec_au_sqmi"];
 var attLegendFormat = ".0f"
 
 // This string is appended in front of the attribute name to make age groups descriptive
@@ -140,7 +140,7 @@ function createDropdown(jsonData){
   //add a select element for the dropdown menu
   var dropdown = d3.select("#dropdown")
   .append("div")
-  .html("<h4>Select Age Group: </h4>")
+  .html("<h4>Select Swine Category: </h4>")
   .append("select")
   .on("change", function(){ changeAttribute(this.value, jsonData) }); //changes expressed attribute
 
@@ -242,7 +242,7 @@ function format(number){
 function highlight(data){
   // json properties
   var props = data.properties;
-  var labelAttribute = "<h1>"+ format(props[expressed]) + "%</h1><br><b>" + preAttributeAlias + " " + expressed + "</b><br><b>" + props[key]+ "</b>"; //label content
+  var labelAttribute = "<h1>"+ format(props[expressed]) + "AU/sqmi</h1><br><b>" + preAttributeAlias + " " + expressed + "</b><br><b>" + props[key]+ "</b>"; //label content
   var labelName = data.id;
 
   // Append label
