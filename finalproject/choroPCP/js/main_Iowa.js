@@ -15,7 +15,8 @@ var key = "HUC_8";
 var dropdowntext = "Select Attribute:";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["newhuc8changeec_ec_apr_may", "newhuc8changeec_weanau_sqmi", "newhuc8changeec_nursau_sqmi", "newhuc8changeec_growau_sqmi","newhuc8changeec_au_sqmi"];
+var attNames = ["newhuc8changeec_ec_apr_may", "newhuc8changeec_ec_may_jun", "newhuc8changeec_ec_jun_jul", "newhuc8changeec_ec_jul_aug", "newhuc8changeec_ec_aug_sep", "newhuc8changeec_ec_sep_oct",
+"newhuc8changeec_weanau_sqmi", "newhuc8changeec_nursau_sqmi", "newhuc8changeec_growau_sqmi","newhuc8changeec_au_sqmi"];
 var attLegendFormat = ".0f"
 
 // This string is appended in front of the attribute name to make age groups descriptive
