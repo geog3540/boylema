@@ -94,10 +94,10 @@ var whiteblue = "http://{s}.sm.mapstack.stamen.com/(toner-lite,(watercolor,$fff%
 var mapboxTiles = L.tileLayer(whiteblue).addTo(map);
 
 // CHOROPLETH MAP SETTINGS ////////////////////////////////////////////////////////////////////////////////////
-var polygonJSONFile = "data/huc8ecchangesdata.geojson"
-var attributeName = "newhuc8changeec_au_sqmi";
+var polygonJSONFile = "data/newhuc8cafodata.geojson"
+var attributeName = "huc8newcafodata_au_sqmi";
 //enter the name of the normalized attribute if normalization is used
-var attributeAlias = "Swine Animal Units per Square Mile";
+var attributeAlias = "Swine Animal Units/Square Mile";
 // enter the normalization attribute to divide the original attribute with.
 // if there is no divider, the variable divideBy shouldn't be assigned any value as below:
 var divideBy;
@@ -112,20 +112,20 @@ var formatLegend = d3.format(".2f");
 // keep the background polygons transparent.
 // Background polygons are still needed (even if you don't symbolize them)
 // to set the frame of the point layer.
-var polygonOpacity = 0;
-var colors = colorbrewer.Greys;
+var polygonOpacity = 1;
+var colors = colorbrewer.Blues;
 var numOfClasses = 4;
 
 // POINT SYMBOL MAP SETTINGS //////////////////////////////////////////////////////////////////////
-var pointJSONFile = "data/ecpointdata.geojson";
+var pointJSONFile = "data/junepointdata.geojson";
 // title for the legend
-var pointTitle = "Average concentration of E. coli at Sampling sites in September"
+var pointTitle = "Average concentration of E. coli in June"
 // attribute name to be used for proportional symbols
-var pointVariable = "ec_sept";
+var pointVariable = "ec_jun";
 // id attribute for points to be used for creating tooltip
-var pointKey = "ec_sept";
+var pointKey = "ec_jun";
 // list all variables to be included in the information window on hover over tooltip
-var variablesOnInfoWindow = ["ec_sept"];
+var variablesOnInfoWindow = ["ec_jun", "siteID"];
 var formatPointLegend = d3.format(".2s");
 // suffix for legend
 var suffix = "(MPN/100ml)"
