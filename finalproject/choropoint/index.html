@@ -78,15 +78,15 @@
 
 //BASEMAP SETTINGS
 //change the center of your map in setView
-// var centerLatitude = 42.17, centerLongitude = -93.45;
+var centerLatitude = 42.17, centerLongitude = -93.45;
 // Change the zoom level to fit your dataset
 // zoom level 1 shows the whole world, and 15 focuses on a neighborhood level
-// var zoomLevel = 7;
-// var map = L.map('map').setView([centerLatitude, centerLongitude], zoomLevel);
+var zoomLevel = 7;
+var map = L.map('map').setView([centerLatitude, centerLongitude], zoomLevel);
 
 //alternative to setting center coordinates and zoom level, zoom to the spatial extent (bounding box) of the dataset
-var southWest = L.latLng(41.61, -91.63), northEast = L.latLng(41.76, -91.72), bounds = L.latLngBounds(southWest, northEast);
-var map = L.map('map').fitBounds(bounds);
+//var southWest = L.latLng(41.61, -91.63), northEast = L.latLng(41.76, -91.72), bounds = L.latLngBounds(southWest, northEast);
+//var map = L.map('map').fitBounds(bounds);
 
 var blackwhite = "http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png";
 var whiteblack = "http://{s}.sm.mapstack.stamen.com/((naip,$fff[difference],$fff[@60],$fff[hsl-saturation@90])[multiply],(mapbox-water,$fff[difference],$000[@60],$090d11[hsl-color]))/{z}/{x}/{y}.png"
@@ -113,8 +113,8 @@ var formatLegend = d3.format(".2f");
 // Background polygons are still needed (even if you don't symbolize them)
 // to set the frame of the point layer.
 var polygonOpacity = 1;
-var colors = colorbrewer.Blues;
-var numOfClasses = 4;
+var colors = colorbrewer.PuBu;
+var numOfClasses = 5;
 
 // POINT SYMBOL MAP SETTINGS //////////////////////////////////////////////////////////////////////
 var pointJSONFile = "data/junepointdata.geojson";
@@ -132,9 +132,9 @@ var suffix = "(MPN/100ml)"
 // enter the minimum and maximum pixel values for the proportional symbols
 var minRadius = 0, maxRadius = 30;
 // circle fill color
-var circleFill = "#de2d26";
+var circleFill = "#cc4c02";
 // circle stroke color
-var circleStroke = "#67000d";
+var circleStroke = "#662506";
 // circle fill opacity
 var circleOpacity = .5;
 

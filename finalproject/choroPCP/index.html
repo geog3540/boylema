@@ -79,29 +79,30 @@
         <div class="row">
           <div class="col-lg-9">
             <!-- Change the map description below-->
-            <p>This map displays the change in the cocentration of E.coli between the chosen month from the previous maps and the swine density for several population categories of swine in livestock production.
-              A parallel coordinates plot (PCP) allows visualization of the relationship between the density of the different swine categories and the change in E.coli concentration.
+            <p>This map allows for the visualizatio the monthly changes in the cocentrations of E.coli from the previous small multiples map and the swine density for several population categories of swine in concentrated animal feeding operation (CAFO) livestock production.
+              Use the dropdown menu on the right to select what monthly change or swine density category to display on the choropleth map below.
+              A parallel coordinates plot (PCP) allows visualization of the relationship between the density of the different swine categories and the montly changes in E.coli concentration.
               The swine categories included in this data are explained below:</p>
               <ul>
-                <li> <b>Wean:</b> Female pigs are moved to individual pens and the piglets are typically weaned 2-3 weeks afterwards.</li>
-                  <li><b>Nurse:</b>Following the weaning process, piglets are moved to a sperate confinement barn for nursing.
+                <li> <b>Wean:</b> (Newhuc8changeec_weanau_sqmi) Female pigs are moved to individual pens and the piglets are typically weaned 2-3 weeks afterwards.</li>
+                  <li><b>Nurse:</b>(Newhuc8changeec_nursau_sqmi) Following the weaning process, piglets are moved to a sperate confinement barn for nursing.
                     These barns are typically lined with slotted plastic to allow for the escape of manure.</li>
-                    <li><b>Grow:</b>The last stage before the pigs reach market weight is the grow category. Pigs are fed and grown until the reach market weight.
+                    <li><b>Grow:</b>(Newhuc8changeec_growau_sqmi) The last stage before the pigs reach market weight is the grow category. Pigs are fed and grown until the reach market weight.
                       The use of antiobtics must end within a certain period prior to slaughter.</li>
+                      <li><b>Total:</b>(Newhuc8changeec_au_sqmi) Total swine density for all swine present in within CAFOs located in each Watershed boundary.</li>
                   </ul>
 
                   <!-- Change the map interpretation below-->
 
-                  <p>Antibiotics are used  in CAFOs to not only to treat infections, but to promote growth and prevent any potentially future infections (Chee-Sandford et al, 2009, Woolhouse et al, 2015).
+                  <p>CAFOs are important to examine in relationt to microbial concentrations due to the amount of antibiotics used in CAFOs to not only to treat infections, but to promote growth and prevent any potentially future infections (Chee-Sandford et al, 2009, Woolhouse et al, 2015).
                     The overuse of antibiotics creates a highly selective environment for microbes, resulting in increased concentrations of antibiotic reisitant bacteria (ARB) and genes (ARG) in manure and wastewater from these locations (Pruden et al, 2006).
-                  Its been shown that ARBs and ARGs are partially environemental contaminants originating from multiple sources including hospitals, waste water treatment plants, manure application from CAFOs, aquaculture, and industry (Kraemer et al, 2019).
-                To make things more complicated, in addition to antibiotics affecting ARB and ARG occcurences at the initial sites (hospitals, CAFOs, etc.), increased antibiotic concentrations in the environment are creating more selective natural environments not only bacterial population in CAFOs,
-                but also environmental microbial populations that are naturally found in these environments. Even low concentraton of antibiotics in the environment have been shown to increase horizontal gene transfer, transcription levels, and mutation rates, resulting in potentially more resistance and virulent bacterial strains(Foster, 2007, Maiques et al, 2006, Remy et al, 2018).</p>
+                  Its been shown that a proportion of environmental ARBs and ARGs originate from sources such as hospitals, waste water treatment plants, CAFOs, site of manure application, aquaculture, and industry (Kraemer et al, 2019).
+                </p>
 
 
               <p>
-                Although the map below only shows concentrations of E. coli (due to data avaiablity and missing observations), it provides a general picture of how the temporal changes in E. coli concentrations in Iowa Watersheds may be related to
-                the swine density in each watershed. Additionally, seperating the swine population into categories based on the production step, can provide insight into specific processes that may be more directly correlated with an increase in E.coli levels. </p>
+                Although the map below only shows concentrations of E. coli, not specifically antibiotic resistant E.coli, it provides a general picture of how the temporal changes in E. coli concentrations in Iowa Watersheds may be related to
+                the swine density from CAFOs in each watershed. Additionally, seperating the swine population into categories based on the production step, can provide insight into specific processes that may be more directly correlated with an increase in E.coli levels. </p>
 
                   </div>
                   <div class="col-lg-2">
@@ -139,7 +140,16 @@
 
                   <div class="row">
                     <div class="col-xs-12">
-                      <p><b>Changes:</b> Mouseover now highlights the parallel coordinate plot! Some minor formatting tweaks otherwise.</p>
+
+                      <h5 class="card-title">
+                        <b>Interpretation: </b>
+                      </h5>
+
+                      <p> To examine certian patterns pertaining to high or low values within a particular category, value ranges can be selected on the PCP.
+                        Although there is not a clear pattern when first observing the PCP and associated choropleth map, when selecting the range of 300-500 au/sq mi in the last column (total swine au/sq mi),
+                        a pattern can be seen in the monthly changes of E.coli concentration. The value appear to fluctuate, however, it looking closely at the vlaues for each column, all lines seem to stay close to zero.
+                      This indicates that simply looking at the swine density in relation to E.coli concentration isn't enough and that additional factors that are not accounted for may play a larger role in the monthly changes in E.coli concentrations.
+                    This result may be because CAFOs are keeping any waste byproducts well contained, and that the locations where manure from CAFOs are actually spread would be more telling.</p>
 
                       <h5 class="card-title">
                         <b>References </b>
@@ -150,9 +160,7 @@
                           <li>Woolhouse, M.; Ward, M.; Van Bunnik, B.; Farrar, J. Antimicrobial resistance in humans, livestock and the wider environment. Philos. Trans. R. Soc. B Boil. Sci. 2015, 370, 20140083.</li>
                             <li>Pruden, A.; Pei, R.; Storteboom, H.; Carlson, K.H. Antibiotic resistance genes as emerging contaminants: Studies in northern Colorado. Environ. Sci. Technol. 2006, 40, 7445–7450.</li>
                             <li>Kraemer, S. A.; Ramachandran A.; Perron G.G. Antibiotic Pollution in the Environment: From Microbial Ecology to Public Policy. Microorganisms. 2019, 7, 180</li>
-                            <li>Foster, P. Stress-induced mutagenesis in bacteria. Crit. Rev. Biochem. Mol. Biol. 2007, 42, 373–397.</li>
-                            <li>Maiques, E.; Úbeda, C.; Campoy, S.; Salvador, N.; Lasa, Í.; Novick, R.P.; Barbé, J.; Penadés, J.R. β-lactam antibiotics induce the SOS response and horizontal transfer of virulence factors in Staphylococcus aureus. J. Bacteriol. 2006, 188, 2726–2729.</li>
-                            <li>Rémy, B.; Mion, S.; Plener, L.; Elias, M.; Chabrière, E.; Daudé, D. Interference in bacterial quorum sensing: A biopharmaceutical perspective. Front. Pharmacol. 2018, 9, 203</li>
+
 
                           </ul>
 

@@ -12,7 +12,6 @@ var colors = colorbrewer.PuBuGn;
 
 //TODO: change the name and id field of your data. These will be used to link the pcp with the map, and also display labels
 var key = "HUC_8";
-var dropdowntext = "Select Attribute:";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
 var attNames = ["newhuc8changeec_ec_apr_may", "newhuc8changeec_ec_may_jun", "newhuc8changeec_ec_jun_jul", "newhuc8changeec_ec_jul_aug", "newhuc8changeec_ec_aug_sep", "newhuc8changeec_ec_sep_oct",
@@ -141,7 +140,7 @@ function createDropdown(jsonData){
   //add a select element for the dropdown menu
   var dropdown = d3.select("#dropdown")
   .append("div")
-  .html("<h4>Select Swine Category: </h4>")
+  .html("<h4>Select Category: </h4>")
   .append("select")
   .on("change", function(){ changeAttribute(this.value, jsonData) }); //changes expressed attribute
 
