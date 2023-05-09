@@ -55,8 +55,8 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Percent Children Screened With Elevated Blood Lead Level in Chicago 1999 - 2013 by Community Area</h1>
-              <span class="post-meta">Posted on May 15, 2020</span>
+              <h1>Animated Monthly Net Change of E. coli Concentrations in Iowa Watersheds</h1>
+              <span class="post-meta">from March 2020 to November 2020</span>
             </div>
           </div>
         </div>
@@ -71,45 +71,45 @@
         <svg width="960" height="600"></svg>
         <h3 id="using-the-map">Using the Map</h3>
         <ol>
-          <li>The map will animate automatically to show unemployment rates by county from 1990 to 2017.</li>
-          <li>At any point, you can hover over the year label (on the right side) to stop the animation.  Moving your cursor horizontally over the year label will automatically update the year that is shown on the choropleth (move left to decrease the year, right to increase the year).</li>
-          <li>Hover over a county to see a tooltip providing the county name and the unemployment rate in that year.</li>
+          <li>The map will animate automatically to show net changes in E. coli concentrations in Iowa watersheds from March 2020 (4) to November 2020 (11).</li>
+          <li>At any point, you can hover over the month label (on the right side) to stop the animation.  Moving your cursor horizontally over the month label will automatically update the month that is shown on the choropleth (move left to decrease the month, right to increase the month).</li>
+          <li>Hover over a watershed to see a tooltip providing the watershed huc8 id and the net change in E. coli concentration for that given month.</li>
         </ol>
         <script>
 
         // var topoJSONFile = "data/contour.json";
-        var topoJSONFile = "data/contour.geojson";
+        var topoJSONFile = "data/animatedhuc8reduceddata.geojson";
         // enter the desired projection - note that input geojson has to be in WGS84 GCS
-        var projection = d3.geoTransverseMercator().rotate([87,0]);
+        var projection = d3.geoTransverseMercator().rotate([93,0]);
         //enter the name of the feature or geometry collection within the topoJSONFile
         // for example, for the default dataset us.objects.polygons, enter polygons
-        var featureCollection = "contour";
+        var featureCollection = "animatedhuc8reduceddata";
         // id field in the topojson file
-        var idfield = "area_numbe"
-        var csvFile = "data/ElevatedBloodLeadLevelRate.csv";
-        var attributeAlias = "Lead poisoning rate (%)";
+        var idfield = "animatedshapedata_code"
+        var csvFile = "data/animateddata.csv";
+        var attributeAlias = "Net Change in E. coli Concentration MPN/100ml";
 
         // enter the minimum and maximum values of the attribute over years
         // one legend is created based on equal interval classification for all years.
-        var min = 0, max = 40;
+        var min = -14000, max = 14000;
 
         //enter the beginning year or date/time of animation.
-        var beginTime = 1999, endTime = 2013;
+        var beginTime = 4, endTime = 11;
 
         // width and height of map frame
-        var height = 600;
-        var width = 960;
+        var height = 820;
+        var width = 900;
 
         // Find the abbreviations of color names from https://colorbrewer2.org/
-        var colors =  colorbrewer.Reds;
-        var numOfClasses = 9;
+        var colors =  colorbrewer.BrBG;
+        var numOfClasses =8;
 
         //DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING
         ////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////////////
 
         var svg = d3.select("svg");
-        var format = d3.format(".1f");
+        var format = d3.format(".0f");
 
         var colorScheme = colors[numOfClasses];
 
@@ -158,7 +158,7 @@
         var label = svg.append("text")
         .attr("class", "year label")
         .attr("text-anchor", "end")
-        .attr("y", height - 125)
+        .attr("y", height - 230)
         .attr("x", width)
         .text(beginTime);
 
@@ -226,7 +226,7 @@
               div.transition()
               .duration(200)
               .style("opacity", .9);
-              div.html(nameById[d.id] + ' in ' + Math.round(currentYear) +': <br><strong>' + rateById[d.id] + '%</strong>')
+              div.html(nameById[d.id] + ' in ' + Math.round(currentYear) +': <br><strong>' + rateById[d.id] + 'MPN/100ml</strong>')
               .style("left", (d3.event.pageX) + "px")
               .style("top", (d3.event.pageY - 28) + "px");})
               // fade out tooltip on mouse out
