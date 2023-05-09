@@ -1,5 +1,5 @@
 
-var polygonJSONFile = "data/huc8ecchangesdata.geojson";
+var polygonJSONFile = "data/huc8data_5_8.geojson";
 
 //change the center of your map in setView
 var centerLatitude = 42.17, centerLongitude = -93.45;
@@ -14,8 +14,8 @@ var colors = colorbrewer.PuBuGn;
 var key = "HUC_8";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["newhuc8changeec_ec_apr_may", "newhuc8changeec_ec_may_jun", "newhuc8changeec_ec_jun_jul", "newhuc8changeec_ec_jul_aug", "newhuc8changeec_ec_aug_sep", "newhuc8changeec_ec_sep_oct",
-"newhuc8changeec_weanau_sqmi", "newhuc8changeec_nursau_sqmi", "newhuc8changeec_growau_sqmi","newhuc8changeec_au_sqmi"];
+var attNames = ["huc8ecchangesdata_totalswineau", "huc8ecchangesdata_growswineau", "huc8ecchangesdata_nurseswineau", "huc8ecchangesdata_weanswineau", "huc8ecchangesdata_march_april", "huc8ecchangesdata_april_may",
+"huc8ecchangesdata_may_june", "huc8ecchangesdata_june_july", "huc8ecchangesdata_july_aug","huc8ecchangesdata_aug_sept","huc8ecchangesdata_sept_oct","huc8ecchangesdata_oct_nov"];
 var attLegendFormat = ".0f"
 
 // This string is appended in front of the attribute name to make age groups descriptive

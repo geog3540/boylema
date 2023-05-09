@@ -79,9 +79,10 @@
         <div class="row">
           <div class="col-lg-9">
             <!-- Change the map description below-->
-            <p>This map allows for the visualizatio the monthly changes in the cocentrations of E.coli from the previous small multiples map and the swine density for several population categories of swine in concentrated animal feeding operation (CAFO) livestock production.
-              Use the dropdown menu on the right to select what monthly change or swine density category to display on the choropleth map below.
+            <p>This map allows for the visualization of the swine densities for several population categories of swine in concentrated animal feeding operation (CAFO) livestock production.
+              Use the dropdown menu on the right to select the swine density category to display on the choropleth map below. Please only select the first four swine categories to display on the choropleth map.
               A parallel coordinates plot (PCP) allows visualization of the relationship between the density of the different swine categories and the montly changes in E.coli concentration.
+              The bottom value of -100,000 MPN/100ml in the columns representing monthly changes in E. coli concentration correspond to watersheds with null values, or watersheds where no sampling was done.
               The swine categories included in this data are explained below:</p>
               <ul>
                 <li> <b>Wean:</b> (Newhuc8changeec_weanau_sqmi) Female pigs are moved to individual pens and the piglets are typically weaned 2-3 weeks afterwards.</li>
@@ -94,7 +95,7 @@
 
                   <!-- Change the map interpretation below-->
 
-                  <p>CAFOs are important to examine in relationt to microbial concentrations due to the amount of antibiotics used in CAFOs to not only to treat infections, but to promote growth and prevent any potentially future infections (Chee-Sandford et al, 2009, Woolhouse et al, 2015).
+                  <p>CAFOs are important to examine in relation to microbial concentrations due to the amount of antibiotics used in CAFOs to not only to treat infections, but to promote growth and prevent any potentially future infections (Chee-Sandford et al, 2009, Woolhouse et al, 2015).
                     The overuse of antibiotics creates a highly selective environment for microbes, resulting in increased concentrations of antibiotic reisitant bacteria (ARB) and genes (ARG) in manure and wastewater from these locations (Pruden et al, 2006).
                   Its been shown that a proportion of environmental ARBs and ARGs originate from sources such as hospitals, waste water treatment plants, CAFOs, site of manure application, aquaculture, and industry (Kraemer et al, 2019).
                 </p>
@@ -145,8 +146,8 @@
                         <b>Interpretation: </b>
                       </h5>
 
-                      <p> To examine certian patterns pertaining to high or low values within a particular category, value ranges can be selected on the PCP.
-                        Although there is not a clear pattern when first observing the PCP and associated choropleth map, when selecting the range of 300-500 au/sq mi in the last column (total swine au/sq mi),
+                      <p> To examine certian patterns pertaining to high or low values within a particular category, value ranges can be selected on the PCP. The first four columns correspond to the swine categories listed above.
+                        Although there is not a clear pattern when first observing the PCP and associated choropleth map, when selecting the range of 300-500 au/sq mi in the second column (total swine au/sq mi),
                         a pattern can be seen in the monthly changes of E.coli concentration. The value appear to fluctuate, however, it looking closely at the vlaues for each column, all lines seem to stay close to zero.
                       This indicates that simply looking at the swine density in relation to E.coli concentration isn't enough and that additional factors that are not accounted for may play a larger role in the monthly changes in E.coli concentrations.
                     This result may be because CAFOs are keeping any waste byproducts well contained, and that the locations where manure from CAFOs are actually spread would be more telling.</p>
