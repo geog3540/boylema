@@ -58,8 +58,8 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>U.S. Unemployment 1990 - 2017 by County</h1>
-              <span class="post-meta">Posted on October 27, 2018</span>
+              <h1>Monthly Net Change of E. coli Concentrations in Iowa Watersheds</h1>
+              <span class="post-meta">from March 2020 to November 2020</span>
             </div>
           </div>
         </div>
@@ -74,25 +74,26 @@
         <svg width="960" height="600"></svg>
         <h3 id="using-the-map">Using the Map</h3>
         <ol>
-          <li>The map will animate automatically to show unemployment rates by county from 1990 to 2017.</li>
-          <li>At any point, you can hover over the year label (on the right side) to stop the animation.  Moving your cursor horizontally over the year label will automatically update the year that is shown on the choropleth (move left to decrease the year, right to increase the year).</li>
-          <li>Hover over a county to see a tooltip providing the county name and the unemployment rate in that year.</li>
+          <li>The map will animate automatically to show net changes in E. coli concentrations in Iowa watersheds from March 2020 to November 2020.</li>
+          <li>At any point, you can hover over the month label (on the right side) to stop the animation.  Moving your cursor horizontally over the month label will automatically update the month that is shown on the choropleth (move left to decrease the month, right to increase the month).</li>
+          <li>Hover over a watershed to see a tooltip providing the watershed huc8 id and the net change in E. coli concentration for that given month.</li>
         </ol>
         <script>
 
-        var topoJSONFile = "data/us-10m.v1.json";
+        var topoJSONFile = "data/animatedhuc8reduceddata.geojson";
         //enter the name of the feature or geometry collection within the topoJSONFile
         // for example, for the default dataset us.objects.counties, enter counties
-        var featureCollection = "counties";
-        var csvFile = "data/unemployment_by_county_year.csv";
-        var attributeAlias = "Unemployment Rate (%)";
+        var featureCollection = "animatedhuc8reduceddata";
+        var idfield = "animatedshapedata_code"
+        var csvFile = "data/animateddatanonull.csv";
+        var attributeAlias = "Net Change in E. coli Concentration MPN/100ml";
 
         // enter the minimum and maximum values of the attribute over years
         // one legend is created based on equal interval classification for all years.
-        var min = 0, max = 20;
+        var min = -100000, max = 24000;
 
         //enter the beginning year or date/time of animation.
-        var beginTime = 1990, endTime = 2017;
+        var beginTime = "March-April", endTime = "October-November";
 
         // width and height of map frame
         var height = 600;
