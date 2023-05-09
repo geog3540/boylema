@@ -80,40 +80,61 @@
 
       <p class="card-text">
       The top seven clusters, or the clusters with the top seven highest total swine animal units per square mile, were selected and their relationships and locations in Iowa can be seen on the map below.
-    There was not much variation between the differnt swine types, as seen by the colored lines in the PCP (parallel coordinates plot) being relatively straight from the attributes "newhuc8c11" to "newhuc8c17". Because of this, only the filtered clusters for
-  the total swine animal units (newhuc8c11) will be shown. All clusters follow a relatively similar pattern except for the pink cluster. Although the pink cluster had similar swine densities as the other clusters, their net change in E.coli concentrations
-("newhuc8c18" to "newhuc8c25") all jump down to the value of -100000. This is not the true net change value. Instead this represents null, or missing, measurements, indicating that there was a lack of sampling in this particular watershed in 2020. </p>
+    There was not much variation between the differnt swine types, as seen by the colored lines in the PCP (parallel coordinates plot) being relatively straight from the attributes "totalswineau" to "weanswineau". Because of this, only the filtered clusters for
+  the total swine animal units will be shown. All clusters follow a relatively similar pattern except for the pink cluster. Although the pink cluster had similar swine densities as the other clusters, their net change in E.coli concentrations
+   all jump down to the value of -100000. This is not the true net change value. Instead this represents null, or missing, measurements, indicating that there was a lack of sampling in this particular watershed in 2020. </p>
 
       <p class="card-text">
-      When focusing on the blue and green clusters identified, the majority fall in the north central region of Iowa and also follow a relatively similar pattern for the net change in E.coli concentrations. From March to April (newhuc8c18) there is a larger range with some having a positive net change
-    while others had a lower value negative net change. However, the net change from April to May (newhuc8c19) shows most clusters converging together for an almost zero net decrease of -0.36 MPN/100ml. There is then looks to be a steady increase from May to July (newhuc8c20 and newhuc8c21), before slowing decreasing
-    from July to September (newhuc8c22 and newhuc8c23). However, it is important to be cognizant of the values for each attributes number line. When looking more closely, there was actually a decrease in net change of E.coli concentration, with some of the darker blue clusters having a negative net change from June to July (newhuc8c21).
-    These values keep somewhat constant from July to August (newhuc8c22). They then seem to decrease from August to September (newhuc8c23), but when looking at the values, many of them actually increase. All clusters fall within the large range of 22.52-1336.30 MPN/100ml, with some reaching the larger net increase of E.coli concentration, particular the light blue cluster with a change value slightly over 1336.30,
-    and all clusters having a net positive gain in E.coli concentrations for the first time in 2020. The change values then spread to contain postive and negative values from September to October (newhuc8c24) and again display all net positive changes in E.coli concentrations from October to November (newhuc8c25). </p>
+      When focusing on the blue and green clusters identified, the majority fall in the north central region of Iowa and also follow a relatively similar pattern for the net change in E.coli concentrations. From March to April there is a larger range with some having a positive net change
+    while others had a lower value negative net change. However, the net change from April to May shows most clusters converging together for an almost zero net decrease of -0.36 MPN/100ml. There is then looks to be a steady increase from May to July, before slowing decreasing
+    from July to September. However, it is important to be cognizant of the values for each attributes number line. When looking more closely, there was actually a decrease in net change of E.coli concentration, with some of the darker blue clusters having a negative net change from June to July.
+    These values keep somewhat constant from July to August. They then seem to decrease from August to September, but when looking at the values, many of them actually increase. All clusters fall within the large range of 22.52-1336.30 MPN/100ml, with some reaching the larger net increase of E.coli concentration, particular the light blue cluster with a change value slightly over 1336.30,
+    and all clusters having a net positive gain in E.coli concentrations for the first time in 2020. The change values then spread to contain postive and negative values from September to October and again display all net positive changes in E.coli concentrations from October to November. </p>
 
-    <p class="card-text">
-   Overall, we saw the most significant postive net changes in E.coli concentrations between the months of May-June (newhuc8c20), August-September (newhuc8c23), and October-November (newhuc8c35). The large increase from October to November was surpising given it is so late in the season, however the other two
- month periods, May-June and August-September, may coinside with the periods of the year where manure is spread in these regions or when pigs are transported, allowing them access out of their confined areas. As seen by the PCP plot, there is not a strong correlation between the clusters that have the high swine denisities and the clusters with the highest positve net change in E.coli concentrations from month to month.
-This suggests that the waste present in these CAFOs may be well contained and there are other factors that may be more connected with where higher increases in E.coli concentrations are found.</p>
+
       <div class="row">
         <img class="card-img-top" src="Files/somviz/totalauv3.jpg" alt="">
-      </div>
 
-      <h5 class="card-title">
-        <a>Average Change in E.coli Concentrations for April-May, May-June, August-September, and October-November: </a>
-      </h5>
 
-        <p class="card-text">.</p>
+        <p class="card-text">
+       Overall, we saw the most significant postive net changes in E.coli concentrations between the months of May-June, August-September, and October-November. The large increase from October to November was surpising given it is so late in the season, however the other two
+     month periods, May-June and August-September, may coinside with the periods of the year where manure is spread in these regions or when pigs are transported, allowing them access out of their confined areas. As seen by the PCP plot, there is not a strong correlation between the clusters that have the high swine denisities and the clusters with the highest positve net change in E.coli concentrations from month to month.
+    This suggests that the waste present in these CAFOs may be well contained and there are other factors that may be more connected with where higher increases in E.coli concentrations are found.</p>
+
+
+        <!-- Page Content -->
+        <div class="container">
+
+          <!-- Page Heading -->
+          <h2 class="my-4">Changes in E. Coli Concentrations:
+            <small>May-June & August-September</small>
+          </h2>
+
+        <p class="card-text">
+        Since the months of May-June and August-Septmeber had the highest amount of positive net changes as seen in the plot above, these months were further examined.
+      Below are the Somviz results when selecting the clusters with the highest net change in E. coli concentrations during each selected month using the dynamic brushing tools.
+    Unlike the plot above, there is not a clear temporal pattern seen on the PCP for the monthly changes in E. coli concentrations. However, there are similarities in the spatial patterns of the clusters when observing the map of Iowa.
+    The locations of the largest clusters, the dark green and brown, are directly south of the watershed units highlighted in the previous map as having the highest total swine densities.
+   </p>
 
       <div class="row">
-        <img class="card-img-top" src="Files/somviz/sigmonths_2x2v2.jpg" alt="">
+        <img class="card-img-top" src="Files/somviz/juneandsept.jpg" alt="">
+      </div>
+
+      <p class="card-text">
+      To take a closer look, the Somviz results for the dark green and brown clusters were selected and can be visualized below. Examining the monthly changes in E. coli concentrations shows that for both clusters, the months with the
+      highest positive net change include May-June and August-September. These time periods along with the cluster's geographical positioning, indicates thats there may be downstream effects following seasonal activities, such as the spreading of manure,
+      in watersheds south of those with increased swine densities.
+      </thead>
+ </p>
+
+      <div class="row">
+        <img class="card-img-top" src="Files/somviz/clusters.jpg" alt="">
       </div>
 
 
 
-
-      <p class="card-text">
-      Overall Conclusions </p>
+    
       <div>
       </div>
       <div>

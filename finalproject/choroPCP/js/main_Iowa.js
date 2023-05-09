@@ -14,7 +14,7 @@ var colors = colorbrewer.PuBuGn;
 var key = "HUC_8";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["huc8ecchangesdata_totalswineau", "huc8ecchangesdata_growswineau", "huc8ecchangesdata_nurseswineau", "huc8ecchangesdata_weanswineau", "huc8ecchangesdata_march_april", "huc8ecchangesdata_april_may",
+var attNames = ["huc8ecchangesdata_weanswineau", "huc8ecchangesdata_nurseswineau", "huc8ecchangesdata_growswineau", "huc8ecchangesdata_totalswineau", "huc8ecchangesdata_march_april", "huc8ecchangesdata_april_may",
 "huc8ecchangesdata_may_june", "huc8ecchangesdata_june_july", "huc8ecchangesdata_july_aug","huc8ecchangesdata_aug_sept","huc8ecchangesdata_sept_oct","huc8ecchangesdata_oct_nov"];
 var attLegendFormat = ".0f"
 

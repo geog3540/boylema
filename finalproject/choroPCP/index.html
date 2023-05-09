@@ -80,17 +80,17 @@
           <div class="col-lg-9">
             <!-- Change the map description below-->
             <p>This map allows for the visualization of the swine densities for several population categories of swine in concentrated animal feeding operation (CAFO) livestock production.
-              Use the dropdown menu on the right to select the swine density category to display on the choropleth map below. Please only select the first four swine categories to display on the choropleth map.
+              Use the dropdown menu on the right to select the swine density category to display on the choropleth map below. Please only select one of the first four swine categories to display on the choropleth map.
               A parallel coordinates plot (PCP) allows visualization of the relationship between the density of the different swine categories and the montly changes in E.coli concentration.
-              The bottom value of -100,000 MPN/100ml in the columns representing monthly changes in E. coli concentration correspond to watersheds with null values, or watersheds where no sampling was done.
+              The bottom value of -100,000 MPN/100ml in the columns represents monthly changes in E. coli concentration corresponding to watersheds with null values, or watersheds where no sampling was done.
               The swine categories included in this data are explained below:</p>
               <ul>
-                <li> <b>Wean:</b> (Newhuc8changeec_weanau_sqmi) Female pigs are moved to individual pens and the piglets are typically weaned 2-3 weeks afterwards.</li>
-                  <li><b>Nurse:</b>(Newhuc8changeec_nursau_sqmi) Following the weaning process, piglets are moved to a sperate confinement barn for nursing.
+                <li> <b>Wean:</b> (Newhuc8changeec_weanau_sqmi, column 2) Female pigs are moved to individual pens and the piglets are typically weaned 2-3 weeks afterwards.</li>
+                  <li><b>Nurse:</b>(Newhuc8changeec_nursau_sqmi, column 3) Following the weaning process, piglets are moved to a sperate confinement barn for nursing.
                     These barns are typically lined with slotted plastic to allow for the escape of manure.</li>
-                    <li><b>Grow:</b>(Newhuc8changeec_growau_sqmi) The last stage before the pigs reach market weight is the grow category. Pigs are fed and grown until the reach market weight.
+                    <li><b>Grow:</b>(Newhuc8changeec_growau_sqmi, column 4) The last stage before the pigs reach market weight is the grow category. Pigs are fed and grown until the reach market weight.
                       The use of antiobtics must end within a certain period prior to slaughter.</li>
-                      <li><b>Total:</b>(Newhuc8changeec_au_sqmi) Total swine density for all swine present in within CAFOs located in each Watershed boundary.</li>
+                      <li><b>Total:</b>(Newhuc8changeec_au_sqmi, column 5) Total swine density for all swine present within CAFOs located in each Watershed boundary.</li>
                   </ul>
 
                   <!-- Change the map interpretation below-->
@@ -103,7 +103,7 @@
 
               <p>
                 Although the map below only shows concentrations of E. coli, not specifically antibiotic resistant E.coli, it provides a general picture of how the temporal changes in E. coli concentrations in Iowa Watersheds may be related to
-                the swine density from CAFOs in each watershed. Additionally, seperating the swine population into categories based on the production step, can provide insight into specific processes that may be more directly correlated with an increase in E.coli levels. </p>
+                the swine density from CAFOs in each watershed. Additionally, seperating the swine population into categories based on the production step, can provide insight into specific processes that may be more directly correlated with increased E.coli levels. </p>
 
                   </div>
                   <div class="col-lg-2">
@@ -146,11 +146,10 @@
                         <b>Interpretation: </b>
                       </h5>
 
-                      <p> To examine certian patterns pertaining to high or low values within a particular category, value ranges can be selected on the PCP. The first four columns correspond to the swine categories listed above.
-                        Although there is not a clear pattern when first observing the PCP and associated choropleth map, when selecting the range of 300-500 au/sq mi in the second column (total swine au/sq mi),
-                        a pattern can be seen in the monthly changes of E.coli concentration. The value appear to fluctuate, however, it looking closely at the vlaues for each column, all lines seem to stay close to zero.
-                      This indicates that simply looking at the swine density in relation to E.coli concentration isn't enough and that additional factors that are not accounted for may play a larger role in the monthly changes in E.coli concentrations.
-                    This result may be because CAFOs are keeping any waste byproducts well contained, and that the locations where manure from CAFOs are actually spread would be more telling.</p>
+                      <p> To examine certian patterns pertaining to high or low values within a particular category, value ranges can be selected on the PCP by clicking and dragging the mouse. The first column represents the huc8 watershed ID and the next four columns correspond to the swine categories listed above.
+                        Although there is a pattern when first observing the PCP and associated choropleth map, when selecting the range of increased values in any of the four swine density categories,
+                        an even clearer pattern can be seen. With the expection of watershed units with missing values (-100,000), all lines either are at or close to zero.
+                      This indicates that simply looking at the swine density in relation to E.coli concentration isn't enough and that additional factors that are not accounted for may play a larger role in the monthly changes in E.coli concentrations.</p>
 
                       <h5 class="card-title">
                         <b>References </b>
